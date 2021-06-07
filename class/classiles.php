@@ -4,7 +4,7 @@ require __DIR__ . '/../connexion/connexiondb.php';
 class iles{
 
     public function showIles(){
-
+        // sélectionne tout dans iles
         global $conn;
 
         $req_listiles = "SELECT * from `iles`" ; //$sql : contient la requete sql 
@@ -14,7 +14,7 @@ class iles{
     }
 
     public function getIles($ile){
-        
+        // sélectionne le nom de la ville en fonction de l'ile
         global $conn;
 
         $req_listiles = "SELECT v.name FROM `iles_villes` as iv left join `iles` as i on iv.fk_iles = i.id left join `villes` as v on iv.fk_villes = v.id WHERE i.name = '".$ile."'";
